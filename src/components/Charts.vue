@@ -1,19 +1,30 @@
 <template>
   <div>
-      <h1>Котировки</h1>
-      <v-card class="graph-card">
-        <div class="graph">
-          <canvas ref="canvas"></canvas>
-        </div>
-      </v-card>
+      <h1>Графики</h1>
+      <span>
+        <v-card class="graph-card">
+          <div class="graph">
+            <canvas ref="canvas"></canvas>
+          </div>
+        </v-card>
+      </span>
+      <span>
+        <stocks-table class="content-table"
+          :cardHeight="530"
+        ></stocks-table>
+      </span>
   </div>
 </template>
 
 <script>
 import { Line } from "vue-chartjs"
+import StocksTable from "./StocksTable.vue"
 
 export default {
   name: "Charts",
+  components: {
+    StocksTable
+  },
   extends: Line,
   data() {
     return {
@@ -39,12 +50,20 @@ export default {
 
 <style lang="scss" scoped>
 .graph-card{
+  display: inline-block;
   width: 60%;
-  height: 70%;
-  margin: 25px;
+  position: relative;
+  top: 15px;
+  padding: 2%;
 }
 .graph{
   width: 90%;
   height: 70%;
+}
+.content-table{
+  display: inline-block;
+  width: 30%;
+  margin-left: 2%;
+  position: relative;
 }
 </style>

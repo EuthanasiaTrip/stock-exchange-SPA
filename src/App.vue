@@ -4,8 +4,7 @@
       dark
       >
       <v-tabs
-          align-with-title
-      >
+          align-with-title>
           <v-tab
             to="/"
           >
@@ -14,16 +13,16 @@
           <v-tab
             to="/charts"
           >
-          Tab2
+          Графики
           </v-tab>
           <v-tab
             to='/about'
-            >Tab3</v-tab>
+            >Котировки</v-tab>
       </v-tabs>
     </v-app-bar>
     <body>
       <v-main
-        class="pt-8 pl-16"
+        class="px-16 py-8"
       >
       <router-view></router-view>
       </v-main>
