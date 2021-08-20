@@ -8,7 +8,12 @@
     :items="tableData"
     :height="cardHeight"
     :disable-pagination="disablePagination"
-    :hide-default-footer="hideFooter"
+    :hide-default-footer="hideFooter"     
+    :footer-props="{
+      disableItemsPerPage: true,
+      itemsPerPageAllText: null,
+      itemsPerPageOptions: []
+      }"    
   >
   </v-data-table>
   </v-card>
